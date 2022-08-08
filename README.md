@@ -1,3 +1,16 @@
+# Gelato Coding Challenge
+
+## Packages and their purpose
+
+I've added extra packages to the project for quality of life and better development:
+
+-   prettier (code formatting)
+-   lint-staged (runs code formatting every commit)
+-   sass (to use scss files, much better)
+-   ChakraUI (React UI Component library)
+
+I wanted to wrap the cryptokitties API in a GraphQL wrapper and consume it like that for the demo, but as time is of the essence, I'll simply use fetch and some logic, or maybe axios
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
