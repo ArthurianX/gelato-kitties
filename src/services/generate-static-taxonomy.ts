@@ -2,8 +2,8 @@
 
 import fetchCards, { KittyCardInterface } from './fetch-cards';
 
-export interface KittiesCategories {}
-const generateStaticTaxonomy = async (): Promise<any> => {
+export type KittiesCategories = string[];
+const generateStaticTaxonomy = async (): Promise<KittiesCategories> => {
     // NOTE: Couldn't find documentation for v2 API, so I'll just make assumptions and local conventions
     // API Limit is 20 items per page, so we'll do 4 basic calls
 
@@ -28,7 +28,7 @@ const generateStaticTaxonomy = async (): Promise<any> => {
 
     // NOTE: In case of 402, this is a static list below
     // ['is_exclusive', 'is_fancy', 'is_prestige', 'is_special_edition', 'sapphire', 'parakeet', 'thundergrey', 'chestnut', 'strawberry', 'dahlia', 'forgetmenot', 'coralsunrise', 'sizzurp', 'mintgreen', 'cyan', 'doridnudibranch', 'olive', 'gold', 'topaz']
-    return taxonomy;
+    // return taxonomy;
     return [
         'is_exclusive',
         'is_fancy',

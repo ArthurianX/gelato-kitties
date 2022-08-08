@@ -5,6 +5,7 @@ import { Tabs, TabList, TabPanels, Tab, TabPanel } from '@chakra-ui/react';
 import ToggleLights from './components/toggle-light';
 import fetchCards from './services/fetch-cards';
 import generateStaticTaxonomy from './services/generate-static-taxonomy';
+import CategoriesFilter from './components/categories';
 
 function App() {
     // NOTE: For simplicity's sake, manage state here at the top of the app, and make all other components dumb (functional)
@@ -12,7 +13,6 @@ function App() {
     fetchCards(0, 10).then((result) => {
         console.log('fetchCards', result);
     });
-    generateStaticTaxonomy();
     return (
         <div className="App">
             <header className="App-header">
@@ -32,26 +32,12 @@ function App() {
                 {/*    Learn React*/}
                 {/*</a>*/}
             </header>
-
-            <Tabs isFitted>
-                <TabList>
-                    <Tab>One</Tab>
-                    <Tab>Two</Tab>
-                    <Tab>Three</Tab>
-                </TabList>
-
-                <TabPanels>
-                    <TabPanel>
-                        <p>one!</p>
-                    </TabPanel>
-                    <TabPanel>
-                        <p>two!</p>
-                    </TabPanel>
-                    <TabPanel>
-                        <p>three!</p>
-                    </TabPanel>
-                </TabPanels>
-            </Tabs>
+            <CategoriesFilter
+                filterCallback={(arg) => {
+                    console.log('filterCallback arg is', arg);
+                }}
+                tabsOrFilters={'tabs'}
+            />
             <div className="toggler">
                 <ToggleLights />
             </div>
