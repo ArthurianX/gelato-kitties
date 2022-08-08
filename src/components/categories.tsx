@@ -1,8 +1,16 @@
 import generateStaticTaxonomy, {
     KittiesCategories,
 } from '../services/generate-static-taxonomy';
-import { css, Progress, Tab, TabList, Tabs } from '@chakra-ui/react';
-import React, { useState } from 'react';
+import {
+    css,
+    Progress,
+    Tab,
+    TabList,
+    TabPanel,
+    TabPanels,
+    Tabs,
+} from '@chakra-ui/react';
+import React, { useEffect, useState } from 'react';
 
 export interface CategoriesFilterProps {
     filterCallback: (arg: string) => void;
@@ -13,6 +21,13 @@ const CategoriesFilter = ({
     tabsOrFilters = 'tabs',
 }: CategoriesFilterProps): JSX.Element => {
     const [categories, setCategories] = useState<KittiesCategories>([]);
+    const handleTabsChange = (index: number) => {
+        // NOTE: There's a Rect cycle problem here I don't have time to solve.
+        setTimeout(() => {
+            // Moving the callback in the event loop fixes the issue.
+            filterCallback(categories[index]);
+        }, 0);
+    };
     generateStaticTaxonomy().then((cat) => setCategories(cat));
 
     const beautifyTabName = (tab: string): string => {
@@ -26,14 +41,14 @@ const CategoriesFilter = ({
 
     const LoadingComponent = <Progress size="xs" isIndeterminate />;
     const TabsComponent = (
-        <Tabs isFitted onChange={(index) => filterCallback(categories[index])}>
+        <Tabs colorScheme={'teal'} isFitted onChange={handleTabsChange}>
             <TabList
                 overflowX="auto"
                 css={css({
                     scrollbarWidth: 'none',
                     '::-webkit-scrollbar': { display: 'none' },
                     '-webkit-overflow-scrolling': 'touch',
-                    boxShadow: 'inset 0 -2px 0 rgba(0, 0, 0, 0.1)',
+                    boxShadow: 'inset 0 -2px 0 rgba(0, 0, 0, 0.2)',
                     border: '0 none',
                 })}
             >

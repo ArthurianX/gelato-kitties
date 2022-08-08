@@ -8,6 +8,7 @@ const generateStaticTaxonomy = async (): Promise<KittiesCategories> => {
     // API Limit is 20 items per page, so we'll do 4 basic calls
 
     let taxonomy = [
+        'all',
         'is_exclusive',
         'is_fancy',
         'is_prestige',
@@ -30,6 +31,7 @@ const generateStaticTaxonomy = async (): Promise<KittiesCategories> => {
     // ['is_exclusive', 'is_fancy', 'is_prestige', 'is_special_edition', 'sapphire', 'parakeet', 'thundergrey', 'chestnut', 'strawberry', 'dahlia', 'forgetmenot', 'coralsunrise', 'sizzurp', 'mintgreen', 'cyan', 'doridnudibranch', 'olive', 'gold', 'topaz']
     // return taxonomy;
     return [
+        'all',
         'is_exclusive',
         'is_fancy',
         'is_prestige',
