@@ -6,8 +6,8 @@ const ToggleLights = (): JSX.Element => {
     return (
         <IconButton
             colorScheme={colorMode === 'light' ? 'gray' : 'orange'}
-            variant={'ghost'}
-            size={'sm'}
+            variant={'outline'}
+            size={'md'}
             isRound
             onClick={toggleColorMode}
             aria-label="Toggle Lights"
