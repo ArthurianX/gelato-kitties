@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from './logo.svg';
+import logo from './assets/logo-hover.gif';
 import './App.scss';
 import { Tabs, TabList, TabPanels, Tab, TabPanel } from '@chakra-ui/react';
 import ToggleLights from './components/toggle-light';
@@ -14,6 +14,9 @@ function App() {
     return (
         <div className="App">
             <header className="App-header">
+                <img src={logo} className="logo" alt="logo" />
+                <h1>Gelato Kitties</h1>
+
                 {/*<img src={logo} className="App-logo" alt="logo" />*/}
                 {/*<p>*/}
                 {/*    Edit <code>src/App.tsx</code> and save to reload.*/}
@@ -27,8 +30,6 @@ function App() {
                 {/*    Learn React*/}
                 {/*</a>*/}
             </header>
-
-            <h1>Gelato Kitties</h1>
 
             <Tabs isFitted>
                 <TabList>

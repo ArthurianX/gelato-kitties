@@ -4,26 +4,23 @@
     overflow: hidden;
 }
 
-.App-logo {
-    height: 40vmin;
-    pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-    .App-logo {
-        animation: App-logo-spin infinite 20s linear;
-    }
-}
-
 .App-header {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     font-size: calc(10px + 2vmin);
-}
 
-.App-link {
+    .logo {
+        margin-top: 2rem;
+        border-radius: 3.2rem;
+    }
+    h1 {
+        font-family: 'Playfair Display', serif;
+        font-size: 3rem !important;
+        text-align: center;
+        margin: -1rem 0 2.5rem 0 !important;
+    }
 }
 
 @keyframes App-logo-spin {
@@ -39,11 +36,4 @@
     position: absolute;
     bottom: 2rem;
     left: 2rem;
-}
-
-h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: 3rem !important;
-    text-align: center;
-    margin: 1rem 0 2.5rem 0 !important;
 }
