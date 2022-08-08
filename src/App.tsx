@@ -4,13 +4,15 @@ import './App.scss';
 import { Tabs, TabList, TabPanels, Tab, TabPanel } from '@chakra-ui/react';
 import ToggleLights from './components/toggle-light';
 import fetchCards from './services/fetch-cards';
+import generateStaticTaxonomy from './services/generate-static-taxonomy';
 
 function App() {
     // NOTE: For simplicity's sake, manage state here at the top of the app, and make all other components dumb (functional)
 
-    fetchCards({ offset: 0, limit: 10 }).then((result) => {
+    fetchCards(0, 10).then((result) => {
         console.log('fetchCards', result);
     });
+    generateStaticTaxonomy();
     return (
         <div className="App">
             <header className="App-header">
