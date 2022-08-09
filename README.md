@@ -1,6 +1,6 @@
 # Gelato Coding Challenge
 
-[video](.github/video.mp4)
+https://user-images.githubusercontent.com/2720451/183600331-4051debb-36ff-49a7-b05c-c42f40fb8288.mp4
 
 ## Packages and their purpose
 
