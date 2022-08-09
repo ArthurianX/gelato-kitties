@@ -1,5 +1,4 @@
-import { Box, IconButton, useColorMode } from '@chakra-ui/react';
-import { MoonIcon, SunIcon } from '@chakra-ui/icons';
+import { Box, useColorMode } from '@chakra-ui/react';
 import styles from './card.module.scss';
 import { KittyCardInterface } from '../services/fetch-cards';
 import React from 'react';

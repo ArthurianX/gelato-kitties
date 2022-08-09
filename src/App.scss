@@ -2,7 +2,7 @@
     text-align: center;
 }
 
-.App-header {
+.AppHeader {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -30,7 +30,7 @@
     pointer-events: none;
 }
 
-.main-content {
+.mainContent {
     padding: 1rem;
 
     .chakra-tabs {

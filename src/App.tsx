@@ -1,7 +1,7 @@
 import React from 'react';
 import logo from './assets/logo-hover.gif';
 import './App.scss';
-import { SimpleGrid, Box, CircularProgress } from '@chakra-ui/react';
+import { SimpleGrid, CircularProgress } from '@chakra-ui/react';
 import ToggleLights from './components/toggle-light';
 import CategoriesFilter from './components/categories';
 import useApp from './use-app';
@@ -15,7 +15,7 @@ function App() {
 
     return (
         <div className="App">
-            <header className="App-header">
+            <header className="AppHeader">
                 <img src={logo} className="logo" alt="logo" />
                 <h1>Gelato Kitties</h1>
             </header>
@@ -29,7 +29,7 @@ function App() {
                     />
                 </div>
             )}
-            <div className="main-content">
+            <div className="mainContent">
                 <CategoriesFilter
                     filterCallback={setSelectedCategory}
                     tabsOrFilters={'tabs'}
@@ -37,6 +37,7 @@ function App() {
                 <SimpleGrid minChildWidth={400} spacing={8} columns={4}>
                     {filteredKitties.map((kitty, index) => (
                         <KittyCard
+                            key={kitty.id}
                             kitty={kitty}
                             fixedSize={filteredKitties.length < 4}
                         />
