@@ -30,7 +30,8 @@ const useApp = (): UseAppProps => {
 
     const getNextKitties = (page: number): void => {
         setLoading(true);
-        fetchCards(page, 20).then((result) => {
+        fetchCards(page, 10).then((result) => {
+            // console.log(kitties);
             setKitties(result!);
             if (selectedCategory === 'all') {
                 setFilteredKitties(result!);

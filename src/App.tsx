@@ -6,6 +6,7 @@ import ToggleLights from './components/toggle-light';
 import CategoriesFilter from './components/categories';
 import useApp from './use-app';
 import Pagination from './components/pagination';
+import KittyCard from './components/card';
 
 function App() {
     // NOTE: For simplicity's sake, manage state here at the top of the app in a hook, and make all other components dumb (functional)
@@ -35,9 +36,7 @@ function App() {
                 />
                 <SimpleGrid minChildWidth={400} spacing={8}>
                     {filteredKitties.map((kitty, index) => (
-                        <Box bg="pink.200">
-                            <img src={kitty.image_url} alt="" />
-                        </Box>
+                        <KittyCard kitty={kitty} />
                     ))}
                 </SimpleGrid>
                 <Pagination page={page} paginationCallback={setPage} />

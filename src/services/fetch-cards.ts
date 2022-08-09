@@ -108,11 +108,12 @@ const fetchCards = async (
     limit = 10,
 ): Promise<KittyCardInterface[] | null | undefined> => {
     const url = `https://api.cryptokitties.co/v2/kitties/recommend?offset=${offset}&limit=${limit}`;
-    const response: KittyAPIResponse = await fetch(url).then((response) =>
-        response.json(),
-    );
 
-    // No type safety, no error handling, no fallback to known state :(
+    const response: KittyAPIResponse = await fetch(url, {
+        cache: 'force-cache', // If the API allows, force-cache so we get less 402's
+    }).then((response) => response.json());
+
+    // No type safety, no error handling, YOLO.
     return response.greatValues;
 };
 
