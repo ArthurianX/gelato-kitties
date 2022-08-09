@@ -1,5 +1,7 @@
 # Gelato Coding Challenge
 
+[video](.github/video.mp4)
+
 ## Packages and their purpose
 
 I've added extra packages to the project for quality of life and better development:
