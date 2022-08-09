@@ -23,7 +23,7 @@ function App() {
             {loading && (
                 <div className="loading">
                     <CircularProgress
-                        color={'pink.400'}
+                        color={'pink.600'}
                         isIndeterminate
                         size="120px"
                     />
@@ -34,9 +34,12 @@ function App() {
                     filterCallback={setSelectedCategory}
                     tabsOrFilters={'tabs'}
                 />
-                <SimpleGrid minChildWidth={400} spacing={8}>
+                <SimpleGrid minChildWidth={400} spacing={8} columns={4}>
                     {filteredKitties.map((kitty, index) => (
-                        <KittyCard kitty={kitty} />
+                        <KittyCard
+                            kitty={kitty}
+                            fixedSize={filteredKitties.length < 4}
+                        />
                     ))}
                 </SimpleGrid>
                 <Pagination page={page} paginationCallback={setPage} />

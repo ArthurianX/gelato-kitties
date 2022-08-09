@@ -1,5 +1,11 @@
+.kittyCardFixed {
+    max-width: 400px;
+}
 .kittyCard {
     position: relative;
+    border-radius: 6px;
+    min-width: 400px;
+    min-height: 400px;
 }
 
 .info {

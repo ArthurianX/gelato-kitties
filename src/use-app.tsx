@@ -18,10 +18,8 @@ const useApp = (): UseAppProps => {
         KittyCardInterface[]
     >([]);
 
-    const getKitties = (page: number): void => {};
-
     useEffect(() => {
-        console.log('selectedCategory has changed', selectedCategory);
+        filterKittiesByCurrentCategory(kitties);
     }, [selectedCategory]);
 
     useEffect(() => {
@@ -30,14 +28,38 @@ const useApp = (): UseAppProps => {
 
     const getNextKitties = (page: number): void => {
         setLoading(true);
-        fetchCards(page, 10).then((result) => {
+        fetchCards(page * 12, 12).then((result) => {
             // console.log(kitties);
             setKitties(result!);
             if (selectedCategory === 'all') {
                 setFilteredKitties(result!);
+            } else {
+                filterKittiesByCurrentCategory(result!);
             }
             setLoading(false);
         });
+    };
+
+    const filterKittiesByCurrentCategory = (
+        localKitties: KittyCardInterface[],
+    ) => {
+        if (selectedCategory !== 'all') {
+            setFilteredKitties(
+                localKitties.filter((kitty) => {
+                    if (
+                        selectedCategory.indexOf('is_') > -1 &&
+                        // @ts-ignore
+                        kitty[selectedCategory]
+                    ) {
+                        return kitty;
+                    } else if (kitty.color === selectedCategory) {
+                        return kitty;
+                    }
+                }) || [], // Empty the array if nothing is preset, maybe it's a page change
+            );
+        } else {
+            setFilteredKitties(localKitties);
+        }
     };
 
     return { setSelectedCategory, page, setPage, filteredKitties, loading };
