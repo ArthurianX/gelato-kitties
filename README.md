@@ -19,11 +19,12 @@ I wanted to wrap the cryptokitties API in a GraphQL wrapper and consume it like 
 -   TypeScript: Added basic interfaces and types to components, no need for something more in the scope of this project
 -   Categorization: you'll see I extracted some static taxonomy, as the v2 API didn't have clear documentation to do something more dynamic
 -   Pagination: Pretty basic again, your run of the mill page state and the functional component to drive it
--   Light / Dark: Handled beautifully (and saved in localStorage) by ChakraUI, doing this from scratch is probably not an indicative of experience
+-   Light / Dark: Handled beautifully (and saved in localStorage) by ChakraUI, doing this from scratch with media queries and React is not worth it given the library
 
 ### ChakraUI
 
-Something I just started to play with, I found it two weeks ago and I'm using to create my bio site
+Something I just started to play with, I found it two weeks ago and I'm using to create my bio site [arthur.kovacs.is](https://arthur.kovacs.is)
+<img width="1919" alt="image" src="https://user-images.githubusercontent.com/2720451/183603147-2710708e-0567-4f92-a0bf-6d441e3bbef6.png">
 
 # Getting Started with Create React App
 
