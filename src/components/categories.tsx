@@ -41,7 +41,7 @@ const CategoriesFilter = ({
 
     const LoadingComponent = <Progress size="xs" isIndeterminate />;
     const TabsComponent = (
-        <Tabs colorScheme={'teal'} isFitted onChange={handleTabsChange}>
+        <Tabs colorScheme={'pink'} isFitted onChange={handleTabsChange}>
             <TabList
                 overflowX="auto"
                 css={css({
