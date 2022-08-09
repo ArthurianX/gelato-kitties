@@ -21,7 +21,7 @@ I wanted to wrap the cryptokitties API in a GraphQL wrapper and consume it like 
 -   Pagination: Pretty basic again, your run of the mill page state and the functional component to drive it
 -   Light / Dark: Handled beautifully (and saved in localStorage) by ChakraUI, doing this from scratch with media queries and React is not worth it given the library
 
-### ChakraUI
+### [ChakraUI](https://chakra-ui.com/)
 
 Something I just started to play with, I found it two weeks ago and I'm using to create my bio site [arthur.kovacs.is](https://arthur.kovacs.is)
 <img width="1919" alt="image" src="https://user-images.githubusercontent.com/2720451/183603147-2710708e-0567-4f92-a0bf-6d441e3bbef6.png">
