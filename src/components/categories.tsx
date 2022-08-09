@@ -1,21 +1,15 @@
 import generateStaticTaxonomy, {
     KittiesCategories,
 } from '../services/generate-static-taxonomy';
-import {
-    css,
-    Progress,
-    Tab,
-    TabList,
-    TabPanel,
-    TabPanels,
-    Tabs,
-} from '@chakra-ui/react';
-import React, { useEffect, useState } from 'react';
+import { Progress, Tab, TabList, Tabs } from '@chakra-ui/react';
+import React, { useState } from 'react';
+import styles from './categories.module.scss';
 
 export interface CategoriesFilterProps {
     filterCallback: (arg: string) => void;
     tabsOrFilters: 'tabs' | 'filters';
 }
+
 const CategoriesFilter = ({
     filterCallback,
     tabsOrFilters = 'tabs',
@@ -42,16 +36,7 @@ const CategoriesFilter = ({
     const LoadingComponent = <Progress size="xs" isIndeterminate />;
     const TabsComponent = (
         <Tabs colorScheme={'pink'} isFitted onChange={handleTabsChange}>
-            <TabList
-                overflowX="auto"
-                css={css({
-                    scrollbarWidth: 'none',
-                    '::-webkit-scrollbar': { display: 'none' },
-                    '-webkit-overflow-scrolling': 'touch',
-                    boxShadow: 'inset 0 -2px 0 rgba(0, 0, 0, 0.2)',
-                    border: '0 none',
-                })}
-            >
+            <TabList className={styles.tabsList}>
                 {categories.map((tab, index) => (
                     <Tab key={index}>{beautifyTabName(tab)}</Tab>
                 ))}

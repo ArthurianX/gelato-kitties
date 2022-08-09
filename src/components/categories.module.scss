@@ -1,0 +1,8 @@
+.tabsList {
+    scrollbar-width: none !important;
+    -webkit-overflow-scrolling: touch !important;
+    overflow-x: auto;
+}
+::-webkit-scrollbar {
+    display: none !important;
+}
