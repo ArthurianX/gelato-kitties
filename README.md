@@ -4,14 +4,26 @@ https://user-images.githubusercontent.com/2720451/183600331-4051debb-36ff-49a7-b
 
 ## Packages and their purpose
 
-I've added extra packages to the project for quality of life and better development:
+I've added extra packages to the project for quality of life and better/faster development:
 
 -   prettier (code formatting)
 -   lint-staged (runs code formatting every commit)
 -   sass (to use scss files, much better)
 -   ChakraUI (React UI Component library)
 
-I wanted to wrap the cryptokitties API in a GraphQL wrapper and consume it like that for the demo, but as time is of the essence, I'll simply use fetch and some logic, or maybe axios
+I wanted to wrap the cryptokitties API in a GraphQL wrapper and consume it like that for the demo, but as time is of the essence, I'll simply use fetch and some logic.
+
+### Some notes:
+
+-   Responsiveness: is mainly handled by Chakra UI (their grid, instead of writing flex poetry), I had to convince the tab to horizontally scroll, which isn't really nice to look at, but for the purpose of this demo it works
+-   TypeScript: Added basic interfaces and types to components, no need for something more in the scope of this project
+-   Categorization: you'll see I extracted some static taxonomy, as the v2 API didn't have clear documentation to do something more dynamic
+-   Pagination: Pretty basic again, your run of the mill page state and the functional component to drive it
+-   Light / Dark: Handled beautifully (and saved in localStorage) by ChakraUI, doing this from scratch is probably not an indicative of experience
+
+### ChakraUI
+
+Something I just started to play with, I found it two weeks ago and I'm using to create my bio site
 
 # Getting Started with Create React App
 
