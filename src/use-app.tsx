@@ -18,14 +18,6 @@ const useApp = (): UseAppProps => {
         KittyCardInterface[]
     >([]);
 
-    useEffect(() => {
-        filterKittiesByCurrentCategory(kitties);
-    }, [selectedCategory]);
-
-    useEffect(() => {
-        getNextKitties(page);
-    }, [page]);
-
     const getNextKitties = (page: number): void => {
         setLoading(true);
         fetchCards(page * 12, 12).then((result) => {
@@ -55,12 +47,23 @@ const useApp = (): UseAppProps => {
                     } else if (kitty.color === selectedCategory) {
                         return kitty;
                     }
+                    return false;
                 }) || [], // Empty the array if nothing is preset, maybe it's a page change
             );
         } else {
             setFilteredKitties(localKitties);
         }
     };
+
+    useEffect(() => {
+        filterKittiesByCurrentCategory(kitties);
+        // eslint-disable-next-line
+    }, [selectedCategory]);
+
+    useEffect(() => {
+        getNextKitties(page);
+        // eslint-disable-next-line
+    }, [page]);
 
     return { setSelectedCategory, page, setPage, filteredKitties, loading };
 };

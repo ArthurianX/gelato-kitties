@@ -36,7 +36,7 @@ const CategoriesFilter = ({
     const LoadingComponent = <Progress size="xs" isIndeterminate />;
     const TabsComponent = (
         <Tabs colorScheme={'pink'} isFitted onChange={handleTabsChange}>
-            <TabList className={styles.tabsList}>
+            <TabList data-testid="tabs-list" className={styles.tabsList}>
                 {categories.map((tab, index) => (
                     <Tab key={index}>{beautifyTabName(tab)}</Tab>
                 ))}

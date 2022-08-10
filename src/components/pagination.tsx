@@ -1,11 +1,5 @@
-import { Button, IconButton, useColorMode } from '@chakra-ui/react';
-import {
-    ArrowLeftIcon,
-    ArrowRightIcon,
-    MoonIcon,
-    SunIcon,
-} from '@chakra-ui/icons';
-import { useEffect } from 'react';
+import { Button, IconButton } from '@chakra-ui/react';
+import { ArrowLeftIcon, ArrowRightIcon } from '@chakra-ui/icons';
 
 export interface PaginationProps {
     page: number;

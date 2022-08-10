@@ -5,6 +5,7 @@ const ToggleLights = (): JSX.Element => {
     const { colorMode, toggleColorMode } = useColorMode();
     return (
         <IconButton
+            data-testid="toggle-light"
             colorScheme={colorMode === 'light' ? 'gray' : 'orange'}
             variant={'outline'}
             size={'md'}

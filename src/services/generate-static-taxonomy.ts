@@ -1,6 +1,7 @@
 // NOTE: Shallowly fetch 80 recommended NFTs and extract taxonomy from them
 
-import fetchCards, { KittyCardInterface } from './fetch-cards';
+import { KittyCardInterface } from './fetch-cards';
+// import fetchCards, { KittyCardInterface } from './fetch-cards';
 
 export type KittiesCategories = string[];
 const generateStaticTaxonomy = async (): Promise<KittiesCategories> => {
@@ -25,6 +26,7 @@ const generateStaticTaxonomy = async (): Promise<KittiesCategories> => {
         if (taxonomy.indexOf(cat.color) < 0) {
             taxonomy.push(cat.color);
         }
+        return cat;
     });
 
     // NOTE: In case of 402, this is a static list below
