@@ -1,14 +1,10 @@
 import generateStaticTaxonomy, {
     KittiesCategories,
-} from '../services/generate-static-taxonomy';
+} from '../../services/generate-static-taxonomy';
 import { Progress, Tab, TabList, Tabs } from '@chakra-ui/react';
 import React, { useState } from 'react';
 import styles from './categories.module.scss';
-
-export interface CategoriesFilterProps {
-    filterCallback: (arg: string) => void;
-    tabsOrFilters: 'tabs' | 'filters';
-}
+import { CategoriesFilterProps } from './categories.types';
 
 const CategoriesFilter = ({
     filterCallback,

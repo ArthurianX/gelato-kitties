@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import fetchCards, { KittyCardInterface } from './services/fetch-cards';
+import fetchCards, { KittyCardInterface } from '../../services/fetch-cards';
 
 export interface UseAppProps {
     setSelectedCategory: (category: string) => void;
@@ -9,7 +9,7 @@ export interface UseAppProps {
     loading: boolean;
 }
 
-const useApp = (): UseAppProps => {
+const useKittyList = (): UseAppProps => {
     const [page, setPage] = useState<number>(0);
     const [loading, setLoading] = useState<boolean>(false);
     const [selectedCategory, setSelectedCategory] = useState<string>('all');
@@ -68,4 +68,4 @@ const useApp = (): UseAppProps => {
     return { setSelectedCategory, page, setPage, filteredKitties, loading };
 };
 
-export default useApp;
+export default useKittyList;
