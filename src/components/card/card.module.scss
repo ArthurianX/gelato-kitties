@@ -8,6 +8,13 @@
     min-height: 400px;
 }
 
+.image {
+    margin-right: -2rem;
+}
+
+.renderedSvg {
+}
+
 .info {
     width: 100%;
     height: 100%;
@@ -17,6 +24,22 @@
     position: absolute;
     left: 0;
     top: 0;
+    padding-bottom: 1rem;
+}
+
+.bodyPartControl {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    width: 20%;
+    margin-left: 1rem;
+    h2 {
+        font-family: 'Playfair Display', serif;
+        font-size: 1.4rem;
+        margin: 0;
+        padding: 0;
+        text-align: left;
+    }
 }
 
 .name {

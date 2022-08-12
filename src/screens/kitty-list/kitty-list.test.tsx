@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import App from './App';
+import KittyList from './kitty-list';
 
 beforeAll(() => {
     jest.useFakeTimers();
@@ -11,7 +11,7 @@ afterAll(() => {
 });
 
 test('Render h1 title', () => {
-    render(<App />);
+    render(<KittyList />);
     const titleElement = screen.getByText(/Gelato Kitties/i);
     expect(titleElement).toBeInTheDocument();
 });

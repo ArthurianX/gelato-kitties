@@ -1,21 +1,21 @@
 import React from 'react';
-import logo from './assets/logo-hover.gif';
-import './App.scss';
 import { SimpleGrid, CircularProgress } from '@chakra-ui/react';
-import ToggleLights from './components/toggle-light';
-import CategoriesFilter from './components/categories';
-import useApp from './use-app';
-import Pagination from './components/pagination';
-import KittyCard from './components/card';
+import ToggleLights from '../../components/toggle-light';
+import CategoriesFilter from '../../components/categories/categories';
+import useKittyList from './use-kitty-list';
+import Pagination from '../../components/pagination';
+import KittyCard from '../../components/card/card';
 
-function App() {
-    // NOTE: For simplicity's sake, manage state here at the top of the app in a hook, and make all other components dumb (functional)
+import logo from '../../assets/logo-hover.gif';
+import './kitty-list.scss';
+
+function KittyList() {
     const { setSelectedCategory, page, setPage, filteredKitties, loading } =
-        useApp();
+        useKittyList();
 
     return (
-        <div className="App">
-            <header className="AppHeader">
+        <div className="kittyList">
+            <header className="kittyHeader">
                 <img src={logo} className="logo" alt="logo" />
                 <h1>Gelato Kitties</h1>
             </header>
@@ -53,4 +53,4 @@ function App() {
     );
 }
 
-export default App;
+export default KittyList;

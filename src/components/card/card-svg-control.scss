@@ -1,0 +1,55 @@
+.showOnlyBody {
+    #mouth,
+    #eyes,
+    #eye,
+    #tail,
+    #tailFur,
+    #hooktail_mask {
+        display: none;
+    }
+}
+
+.showOnlyTail {
+    #mouth,
+    #eyes,
+    #eye,
+    #body,
+    #bodyFur,
+    #highlight,
+    #shadow,
+    #bodyMask {
+        display: none;
+    }
+}
+
+.showOnlyMouth {
+    #eyes,
+    #eye,
+    #body,
+    #tail,
+    #tailFur,
+    #bodyFur,
+    #highlight,
+    #shadow,
+    #bodyMask,
+    #hooktail_mask {
+        display: none;
+    }
+}
+
+.showOnlyEyes {
+    #mouth,
+    #body,
+    #tail,
+    #tailFur,
+    #bodyFur,
+    #highlight,
+    #shadow,
+    #bodyMask,
+    #hooktail_mask {
+        display: none;
+    }
+}
+
+.showAll {
+}
