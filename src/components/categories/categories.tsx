@@ -2,7 +2,7 @@ import generateStaticTaxonomy, {
     KittiesCategories,
 } from '../../services/generate-static-taxonomy';
 import { Progress, Tab, TabList, Tabs } from '@chakra-ui/react';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from './categories.module.scss';
 import { CategoriesFilterProps } from './categories.types';
 
@@ -18,7 +18,6 @@ const CategoriesFilter = ({
             filterCallback(categories[index]);
         }, 0);
     };
-    generateStaticTaxonomy().then((cat) => setCategories(cat));
 
     const beautifyTabName = (tab: string): string => {
         if (tab.indexOf('is_') > -1) {
@@ -43,6 +42,10 @@ const CategoriesFilter = ({
 
     const RenderedComponent =
         tabsOrFilters === 'tabs' ? TabsComponent : FiltersComponent;
+
+    useEffect(() => {
+        generateStaticTaxonomy().then((cat) => setCategories(cat));
+    }, []);
 
     return <>{categories.length ? RenderedComponent : LoadingComponent}</>;
 };

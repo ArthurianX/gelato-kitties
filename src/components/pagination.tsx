@@ -13,6 +13,7 @@ const Pagination = ({
     return (
         <div style={{ marginTop: '1rem' }}>
             <IconButton
+                data-testid="pagination-prev-button"
                 colorScheme="pink"
                 aria-label="Prev Page"
                 size="lg"
@@ -26,10 +27,17 @@ const Pagination = ({
                     }, 0);
                 }}
             />
-            <Button width={20} colorScheme="gray" size="lg" disabled={true}>
+            <Button
+                data-testid="pagination-value-button"
+                width={20}
+                colorScheme="gray"
+                size="lg"
+                disabled={true}
+            >
                 {page + 1}
             </Button>
             <IconButton
+                data-testid="pagination-next-button"
                 colorScheme="pink"
                 aria-label="Next Page"
                 size="lg"

@@ -5,14 +5,19 @@ const ToggleLights = (): JSX.Element => {
     const { colorMode, toggleColorMode } = useColorMode();
     return (
         <IconButton
-            data-testid="toggle-light"
             colorScheme={colorMode === 'light' ? 'gray' : 'orange'}
             variant={'outline'}
             size={'md'}
             isRound
             onClick={toggleColorMode}
             aria-label="Toggle Lights"
-            icon={colorMode === 'light' ? <MoonIcon /> : <SunIcon />}
+            icon={
+                colorMode === 'light' ? (
+                    <MoonIcon data-testid="toggle-dark-icon" />
+                ) : (
+                    <SunIcon data-testid="toggle-light-icon" />
+                )
+            }
         />
     );
 };

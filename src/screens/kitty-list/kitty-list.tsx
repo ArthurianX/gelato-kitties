@@ -34,7 +34,12 @@ function KittyList() {
                     filterCallback={setSelectedCategory}
                     tabsOrFilters={'tabs'}
                 />
-                <SimpleGrid minChildWidth={400} spacing={8} columns={4}>
+                <SimpleGrid
+                    minChildWidth={400}
+                    spacing={8}
+                    columns={4}
+                    data-testid="kitty-results"
+                >
                     {filteredKitties.map((kitty, index) => (
                         <KittyCard
                             key={kitty.id}
