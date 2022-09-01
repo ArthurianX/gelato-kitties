@@ -107,6 +107,7 @@ const fetchCards = async (
     offset = 0,
     limit = 10,
 ): Promise<KittyCardInterface[] | null | undefined> => {
+    // https://api.cryptokitties.co/v3/kitties/1290513
     const url = `https://api.cryptokitties.co/v2/kitties/recommend?offset=${offset}&limit=${limit}`;
 
     const response: KittyAPIResponse = await fetch(url, {
