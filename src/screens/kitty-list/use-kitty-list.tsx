@@ -7,6 +7,8 @@ export interface UseAppProps {
     setPage: (page: number) => void;
     filteredKitties: KittyCardInterface[];
     loading: boolean;
+    walletConnected: string;
+    setWalletConnected: (wallet: string) => void;
 }
 
 const useKittyList = (): UseAppProps => {
@@ -14,6 +16,7 @@ const useKittyList = (): UseAppProps => {
     const [loading, setLoading] = useState<boolean>(false);
     const [selectedCategory, setSelectedCategory] = useState<string>('all');
     const [kitties, setKitties] = useState<KittyCardInterface[]>([]);
+    const [walletConnected, setWalletConnected] = useState<string>('');
     const [filteredKitties, setFilteredKitties] = useState<
         KittyCardInterface[]
     >([]);
@@ -65,7 +68,15 @@ const useKittyList = (): UseAppProps => {
         // eslint-disable-next-line
     }, [page]);
 
-    return { setSelectedCategory, page, setPage, filteredKitties, loading };
+    return {
+        setSelectedCategory,
+        page,
+        setPage,
+        filteredKitties,
+        loading,
+        walletConnected,
+        setWalletConnected,
+    };
 };
 
 export default useKittyList;

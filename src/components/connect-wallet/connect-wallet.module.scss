@@ -1,0 +1,30 @@
+.walletContainer {
+    width: 60px;
+    height: 60px;
+    position: relative;
+    img {
+        width: 60px;
+        height: 60px;
+    }
+}
+
+.walletIconDisabled {
+    filter: grayscale(1);
+}
+
+.walletIcon {
+    filter: grayscale(0);
+}
+
+.actionText {
+    position: absolute;
+    height: 60px;
+    top: 0;
+    left: calc(60px + 0.5rem);
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    align-items: center;
+    justify-content: start;
+    width: 160px;
+}

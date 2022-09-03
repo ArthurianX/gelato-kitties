@@ -8,10 +8,18 @@ import KittyCard from '../../components/card/card';
 
 import logo from '../../assets/logo-hover.gif';
 import './kitty-list.scss';
+import ConnectWallet from '../../components/connect-wallet/connect-wallet';
 
 function KittyList() {
-    const { setSelectedCategory, page, setPage, filteredKitties, loading } =
-        useKittyList();
+    const {
+        setSelectedCategory,
+        page,
+        setPage,
+        filteredKitties,
+        loading,
+        walletConnected,
+        setWalletConnected,
+    } = useKittyList();
 
     return (
         <div className="kittyList">
@@ -19,6 +27,9 @@ function KittyList() {
                 <img src={logo} className="logo" alt="logo" />
                 <h1>Gelato Kitties</h1>
             </header>
+            <div className="wallet-area">
+                <ConnectWallet metaConnectionCallback={setWalletConnected} />
+            </div>
 
             {loading && (
                 <div className="loading">
@@ -42,6 +53,7 @@ function KittyList() {
                 >
                     {filteredKitties.map((kitty, index) => (
                         <KittyCard
+                            walletConnected={walletConnected}
                             key={kitty.id}
                             kitty={kitty}
                             fixedSize={filteredKitties.length < 4}

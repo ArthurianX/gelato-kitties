@@ -5,4 +5,5 @@ export type SelectedKittyBodyPart = 'all' | 'eyes' | 'mouth' | 'body' | 'tail';
 export interface KittyCardProps {
     kitty: KittyCardInterface;
     fixedSize: boolean;
+    walletConnected: string;
 }

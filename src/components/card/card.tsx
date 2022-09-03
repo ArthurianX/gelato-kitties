@@ -5,10 +5,12 @@ import { KittyCardProps } from './card.types';
 import styles from './card.module.scss';
 import './card-svg-control.scss';
 import useCard from './use-card';
+import cart from '../../assets/shopping.svg';
 
 const KittyCard = ({
     kitty,
     fixedSize = false,
+    walletConnected,
 }: KittyCardProps): JSX.Element => {
     const {
         showBodyPartClass,
@@ -17,7 +19,8 @@ const KittyCard = ({
         remoteKitty,
         colorMode,
         renderedSVGParent,
-    } = useCard(kitty);
+        buyKitty,
+    } = useCard(kitty, walletConnected);
 
     return (
         <Box
@@ -93,6 +96,21 @@ const KittyCard = ({
                     </RadioGroup>
                 </Box>
                 <div className={styles.name}>{kitty.name || '-'}</div>
+                <a
+                    href="javascript:;"
+                    onClick={() => buyKitty(walletConnected, kitty)}
+                    className={styles.cartLink}
+                >
+                    <img
+                        className={
+                            walletConnected
+                                ? styles.cartIconEnabled
+                                : styles.cartIcon
+                        }
+                        src={cart}
+                        alt=""
+                    />
+                </a>
             </div>
         </Box>
     );

@@ -46,3 +46,19 @@
     font-family: 'Playfair Display', serif;
     font-size: 2rem;
 }
+
+.cartLink {
+    position: absolute;
+    top: 1rem;
+    left: calc(50% - 32px);
+}
+.cartIcon {
+    height: 32px;
+    width: 32px;
+    filter: grayscale(1);
+}
+.cartIconEnabled {
+    height: 42px;
+    width: 42px;
+    filter: grayscale(0);
+}
